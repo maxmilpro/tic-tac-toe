@@ -17,26 +17,6 @@ var makeMove = function(element) {
 
 // write a function to check for the winner
 var checkForWinner = function() {
-  // // assign the rows to a variable
-  // var [row1, row2, row3] = document.getElementsByClassName('row');
-  // console.log(row1);
-  // row1 = row1.children
-  // console.log(row1[0].innerHTML);
-  // // iterate over the rows
-  // if (row1[0].innerHTML === 'X' && row1[1].innerHTML === 'X' && row1[2].innerHTML === 'X') {
-  //   alert('Player One is the Winner!');
-  // } else if (row2[0].innerHTML === 'X' && row2[1].innerHTML === 'X' && row2[2].innerHTML === 'X') {
-  //   alert('Player One is the Winner!');
-  // } else if (row3[0].innerHTML === 'X' && row3[1].innerHTML === 'X' && row3[2].innerHTML === 'X') {
-  //   alert('Player One is the Winner!');
-  // } else if (row1[0].innerHTML === 'X' && row2[0].innerHTML === 'X' && row3[0].innerHTML === 'X') {
-  //   alert('Player One is the Winner!');
-  // } else if (row1[1].innerHTML === 'X' && row2[1].innerHTML === 'X' && row3[1].innerHTML === 'X') {
-  //   alert('Player One is the Winner!');
-  // } else if (row1[2].innerHTML === 'X' && row2[2].innerHTML === 'X' && row3[2].innerHTML === 'X') {
-  //   alert('Player One is the Winner!');
-  // }
-
   var rows = document.getElementsByClassName('row');
 
   for (row of rows) {
@@ -46,6 +26,32 @@ var checkForWinner = function() {
       } else if (row.children[0].innerHTML === 'O') {
         alert('Player Two wins the game!')
       }
+    }
+  }
+
+  for (var i = 0; i < 3; i++) {
+    if (rows[0].children[i].innerHTML === rows[1].children[i].innerHTML && rows[1].children[i].innerHTML === rows[2].children[i].innerHTML) {
+      if (rows[0].children[i].innerHTML === 'X') {
+        alert('Player One wins the game!')
+      } else if (rows[0].children[i].innerHTML === 'O') {
+        alert('Player Two wins the game!')
+      }
+    }
+  }
+
+  if (rows[0].children[0].innerHTML === rows[1].children[1].innerHTML && rows[1].children[1].innerHTML === rows[2].children[2].innerHTML) {
+    if (rows[0].children[0].innerHTML === 'X') {
+      alert('Player One wins the game!')
+    } else if (rows[0].children[0].innerHTML === 'O') {
+      alert('Player Two wins the game!')
+    }
+  }
+
+  if (rows[0].children[2].innerHTML === rows[1].children[1].innerHTML && rows[1].children[1].innerHTML === rows[2].children[0].innerHTML) {
+    if (rows[0].children[2].innerHTML === 'X') {
+      alert('Player One wins the game!')
+    } else if (rows[0].children[2].innerHTML === 'O') {
+      alert('Player Two wins the game!')
     }
   }
 }
