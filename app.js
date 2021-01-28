@@ -13,6 +13,7 @@ var makeMove = function(element) {
     currentMove = 'X';
   }
   checkForWinner();
+  checkForTie();
 }
 
 // write a function to check for the winner
@@ -53,6 +54,20 @@ var checkForWinner = function() {
     } else if (rows[0].children[2].innerHTML === 'O') {
       alert('Player Two wins the game!')
     }
+  }
+}
+
+var checkForTie = function() {
+  var squares = document.getElementsByClassName('square');
+  var itsATie = true;
+  for (var i = 0; i < squares.length; i++) {
+    if (squares[i].innerHTML === '-') {
+      itsATie = false;
+    }
+  }
+
+  if (itsATie) {
+    alert('We have a tie game!');
   }
 }
 
