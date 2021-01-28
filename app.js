@@ -1,6 +1,5 @@
 var currentMove = 'X';
 
-// write a function to make a move for players
 var makeMove = function(element) {
   if (element.innerHTML === 'O' || element.innerHTML === 'X') {
     return;
@@ -16,7 +15,6 @@ var makeMove = function(element) {
   checkForTie();
 }
 
-// write a function to check for the winner
 var checkForWinner = function() {
   var rows = document.getElementsByClassName('row');
 
