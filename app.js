@@ -56,8 +56,22 @@ var checkForWinner = function() {
   }
 }
 
+var clearBoard = function() {
+  var squares = document.getElementsByClassName('square');
+
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].innerHTML = '-';
+  }
+
+  currentMove = 'X';
+}
+
 document.body.addEventListener('click', event => {
   if (event.target.className === 'square') {
     makeMove(event.target);
+  }
+
+  if (event.target.className === 'new-game') {
+    clearBoard();
   }
 });
